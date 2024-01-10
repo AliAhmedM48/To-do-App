@@ -194,7 +194,7 @@ function createTaskCardElement(array, index) {
     return `<button onclick="copyTask(${index},'${type}',this)" class="text-xl">
         <i class="link p-0 m-0 fa-regular fa-copy"></i>
         </button>
-        <p id="copyFeedback" class="absolute animate-fadeOut opacity-0 hidden -bottom-[10px] left-1/2 -translate-x-1/2  ${color} py-[2px] px-2 rounded-lg border  border-primaryColor w-[80%] text-xs">Good luck with your tasks! 🚀💖</p>
+        <p id="copyFeedback" class="absolute text-center animate-fadeOut opacity-0 hidden -bottom-[10px] left-1/2 -translate-x-1/2  ${color} py-[2px] px-2 rounded-lg border  border-primaryColor w-[80%] text-xs">Good luck with your tasks! 🚀💖</p>
 `;
   }
   function createDeleteButton(index, type) {
