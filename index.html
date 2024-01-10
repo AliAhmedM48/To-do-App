@@ -55,18 +55,17 @@
         <!-- #region navbar -->
         <nav class="container flex justify-between items-center h-14">
             <div class="logo">
-                <h1 class="text-3xl uppercase font-oswald hover:animate-bounce">
+                <h1 class="text-3xl uppercase font-oswald">
                     To<span class="text-primaryColor">do</span></h1>
             </div>
 
             <div class="options">
                 <ul class="flex gap-1  justify-start md:gap-3 items-center">
 
-                    <li>
-
+                    <li class="hidden md:block">
                         <button>
                             <input id="search" placeholder="Search by title..."
-                                class="rounded-lg border-primaryColor border-[1px] w-2/3 md:w-full px-4 py-1"
+                                class="rounded-lg  border-primaryColor border-[1px] w-2/3 md:w-full px-4 py-1"
                                 type="search">
                             <!-- <i class="link fa-solid fa-magnifying-glass"></i> -->
                         </button>
@@ -212,7 +211,19 @@
                 hover:bg-primaryColor hover:text-white" type="button">update 📢</button>
         </div>
     </div>
-  
+    <!--~~~~~~~~~~~~~~~ Swiper JS ~~~~~~~~~~~~~~~-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--~~~~~~~~~~~~~~~ Scroll Reveal ~~~~~~~~~~~~~~~-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!--~~~~~~~~~~~~~~~ jquery js ~~~~~~~~~~~~~~~-->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!--~~~~~~~~~~~~~~~ Isotope js Filter & sort magical layouts ~~~~~~~~~~~~~~~-->
+    <!-- <script src="assets/js/isotope.pkgd.min.js"></script> -->
+    <!-- <script src="assets/js/isotope.pkgd.js"></script> -->
+
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
+    <script src="assets/js/filterizr.min.js"></script>
     <!--~~~~~~~~~~~~~~~ Main.js ~~~~~~~~~~~~~~~-->
     <script src="assets/js/main.js"></script>
 </body>
