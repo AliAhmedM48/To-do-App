@@ -22,8 +22,8 @@ const settingButton = document.getElementById("setting");
 const cardsQuantity = document.querySelectorAll(".cards__quantity");
 
 // ~ Variables
-const allArrays = getDataFromLocalStorage("data") || {
-  key: "data",
+const allArrays = getDataFromLocalStorage("toDodata") || {
+  key: "toDodata",
   nextUp: {
     type: "nextUpListData",
     array: [],
@@ -126,7 +126,7 @@ function setToLocalStorage() {
 }
 
 // ^ get data from local storage
-function getDataFromLocalStorage(key = "data") {
+function getDataFromLocalStorage(key = "toDodata") {
   //#region
   return JSON.parse(localStorage.getItem(key));
   //#endregion
