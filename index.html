@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do App | MrAli</title>
+
+    <!--~~~~~~~~~~~~~~~ Favicon ~~~~~~~~~~~~~~~-->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!--~~~~~~~~~~~~~~~ Font Awesome ~~~~~~~~~~~~~~~-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--~~~~~~~~~~~~~~~ Remix Icon ~~~~~~~~~~~~~~~-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+    <!--~~~~~~~~~~~~~~~ Swiper's CSS ~~~~~~~~~~~~~~~-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!--~~~~~~~~~~~~~~~ CSS ~~~~~~~~~~~~~~~-->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="tail.css">
+
+
+
+    <!-- * meta tag | open graph -->
+    <!-- #region Open Graph Tag -->
+    <!-- ! Facebook will use open graph to display information if your content is shared. -->
+    <!-- ! Whatsapp doesn't support picture with a size greater than 300KB. -->
+
+    <meta property="og:url" content="www.MrAli.com" />
+    <!-- <meta property="og:type" content="Personal Portfolio Website" /> -->
+
+    <meta property="og:title" content="MrAli | Energized by engineering, passionate about web development." />
+    <meta property="og:site_name" content="MrAli" />
+
+    <meta property="og:description"
+        content="Fullstack Developer - Building websites from scratch using popular tools and languages." />
+    <meta property="og:image" content="https://i.ibb.co/JpdGyqt/poster.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Never Give Up!" />
+
+    <!-- <meta property="og:video"
+            content="https://aliahmedm48.github.io/html-task1/videos/fun.mp4?namePrefix=&fname=&lname=&email=&password=&birthday=&birthcountry=%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9&phone=&linkedinURL=&from=07%3A00%3A00&to=15%3A00%3A00&from=07%3A00%3A00&to=15%3A00%3A00&TimeManagement=70&Communication=50&Problem-solving=70&color=%23000000&SharingInfo=&submit=Submit+without+HTML+validation" />
+        <meta property="og:video:type" content="video/mp4" />
+    
+        <meta property="og:video:width" content="640" />
+        <meta property="og:video:height" content="360" /> -->
+    <!-- #endregion -->
+</head>
+
+<body class="headline">
+    <!--~~~~~~~~~~~~~~~ Header ~~~~~~~~~~~~~~~-->
+    <header id="navbar" class="fixed z-50 top-0 left-0 w-full border-b border-primaryColor  bg-secondaryColor">
+        <!-- #region navbar -->
+        <nav class="container flex justify-between items-center h-14">
+            <div class="logo">
+                <h1 class="text-3xl uppercase font-oswald hover:animate-bounce">
+                    To<span class="text-primaryColor">do</span></h1>
+            </div>
+
+            <div class="options">
+                <ul class="flex gap-1  justify-start md:gap-3 items-center">
+
+                    <li>
+
+                        <button>
+                            <input id="search" placeholder="Search by title..."
+                                class="rounded-lg border-primaryColor border-[1px] w-2/3 md:w-full px-4 py-1"
+                                type="search">
+                            <!-- <i class="link fa-solid fa-magnifying-glass"></i> -->
+                        </button>
+                    </li>
+                    <li>
+                        <button id="showTaskForm">
+                            <i class="link fa-solid fa-plus"></i>
+                        </button>
+                    </li>
+
+                    <li class="hidden">
+                        <button>
+                            <i class="link fa-solid fa-share link"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button id="setting">
+                            <i class="link fa-solid fa-sliders"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- #endregion -->
+    </header>
+    <main class="h-dvh overflow-y-auto pb-16">
+        <!-- ~~~~~~~~~~~~~~~ Home ~~~~~~~~~~~~~~~-->
+        <section id="home" class="container">
+            <div class="flex flex-col gap-7 md:flex-row">
+                <!-- ~~~~~~~~~~~~~~~ nextup area ~~~~~~~~~~~~~~~-->
+                <div class="nextup state__section">
+                    <!-- #region nextup -->
+                    <div class="state___title">
+                        <h2>Next Up 📝</h2>
+                        <div class="cards__quantity"></div>
+                    </div>
+                    <div id="nextUpContainer" class="state__tasks">
+
+                    </div>
+                    <!-- #endregion -->
+
+                </div>
+                <div class="inprogress state__section">
+                    <!-- #region inprogress -->
+                    <div class="state___title">
+                        <h2>In progress 🤞</h2>
+                        <div class="vertical__separator"></div>
+                        <div class="cards__quantity"></div>
+                    </div>
+                    <div id="inProgressContainer" class="state__tasks">
+
+                    </div>
+                    <!-- #endregion -->
+                </div>
+                <div class="done state__section">
+                    <!-- #region done -->
+                    <div class="state___title ">
+                        <h2>Done 🎉</h2>
+                        <div class="vertical__separator"></div>
+                        <div class="cards__quantity"></div>
+                    </div>
+                    <div id="doneContainer" class="state__tasks">
+
+                    </div>
+                    <!-- #endregion -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--~~~~~~~~~~~~~~~ Footer ~~~~~~~~~~~~~~~-->
+    <footer class="fixed bottom-0 w-full border-t-[1px] border-t-primaryColor bg-secondaryColor">
+        <div class="container h-14 flex justify-center items-center ">
+            <h2 class="font-mono font-black text-xs md:text-base text-primaryColor">
+                "You may delay, but time will not." ⏳
+            </h2>
+        </div>
+    </footer>
+    <!--~~~~~~~~~~~~~~~ New Task Modal ~~~~~~~~~~~~~~~-->
+    <div id="taskForm" class="modal hidden">
+        <div id="black__layer" class="black__layer"></div>
+        <div
+            class="container md:max-w-[50%] px-0 bg-white mx-auto pb-4 border-2 border-primaryColor rounded-lg overflow-hidden">
+            <h2 id="formTitle"
+                class="text-2xl capitalize font-bold text-primaryColor border-b border-primaryColor font-oswald px-2 py-2 text-center bg-secondaryColor">
+                New
+                Task
+            </h2>
+            <div class="py-4 px-7 flex flex-col gap-5">
+
+
+                <div class="form__floating hidden">
+                    <select class="form__select" id="stateInput">
+                        <option disabled>Select Task Status</option>
+                        <option selected value="nextUp">Next Up</option>
+                        <option value="inProgress">In Progress</option>
+                    </select>
+                    <label class="form__label" for="stateInput">Task State</label>
+                </div>
+
+                <div class="form__floating">
+                    <select class="form__select" id="categoryInput">
+                        <option disabled selected>Select Category</option>
+                        <option value="education">Education</option>
+                        <option value="health">Health</option>
+                        <option value="finance">Finance</option>
+                        <option value="productivity">Productivity</option>
+                    </select>
+                    <label class="form__label" for="categoryInput">Task Category</label>
+
+                </div>
+
+                <div class="form__floating">
+                    <input placeholder="" class="form__control" id="titleInput" type="text">
+                    <label class="form__label" for="titleInput">Task Title</label>
+                </div>
+
+                <div class="form__floating">
+                    <textarea class="form__control" id="descriptionInput" type="text" placeholder=""></textarea>
+                    <label class="form__label" for="descriptionInput">Task Description</label>
+                </div>
+
+                <!-- #region  connee -->
+                <!-- 
+                                <div class="form__selecting">
+                                    <select class="form__select" id="taskState">
+                                        <option disabled selected>Task State</option>
+                                        <option value="nextUp">Next Up</option>
+                                        <option value="inProgress">In Progress</option>
+                                    </select>
+                                </div>
+                
+                                <select class="form__select" id="taskCategory">
+                                    <option disabled selected>Category</option>
+                                    <option value="nextUp">c1</option>
+                                    <option value="inProgress">c2</option>
+                                </select>
+                                 -->
+                <!-- #endregion -->
+            </div>
+            <button id="addNewTask" class="bg-secondaryColor text-primaryColor border-2 border-primaryColor rounded-lg font-bold uppercase mx-auto block text-xl px-4 py-1
+                hover:bg-primaryColor hover:text-white" type="button">get started 🚀</button>
+            <button id="updateTask" class="hidden bg-secondaryColor text-primaryColor border-2 border-primaryColor rounded-lg font-bold uppercase mx-auto block text-xl px-4 py-1
+                hover:bg-primaryColor hover:text-white" type="button">update 📢</button>
+        </div>
+    </div>
+    <!--~~~~~~~~~~~~~~~ Swiper JS ~~~~~~~~~~~~~~~-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--~~~~~~~~~~~~~~~ Scroll Reveal ~~~~~~~~~~~~~~~-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!--~~~~~~~~~~~~~~~ jquery js ~~~~~~~~~~~~~~~-->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!--~~~~~~~~~~~~~~~ Isotope js Filter & sort magical layouts ~~~~~~~~~~~~~~~-->
+    <!-- <script src="assets/js/isotope.pkgd.min.js"></script> -->
+    <!-- <script src="assets/js/isotope.pkgd.js"></script> -->
+
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
+    <script src="assets/js/filterizr.min.js"></script>
+    <!--~~~~~~~~~~~~~~~ Main.js ~~~~~~~~~~~~~~~-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
