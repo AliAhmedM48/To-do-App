@@ -22,8 +22,8 @@ const settingButton = document.getElementById("setting");
 const cardsQuantity = document.querySelectorAll(".cards__quantity");
 
 // ~ Variables
-const allArrays = getDataFromLocalStorage("toDodata") || {
-  key: "toDodata",
+const allArrays = getDataFromLocalStorage("data") || {
+  key: "data",
   nextUp: {
     type: "nextUpListData",
     array: [],
@@ -126,7 +126,7 @@ function setToLocalStorage() {
 }
 
 // ^ get data from local storage
-function getDataFromLocalStorage(key = "toDodata") {
+function getDataFromLocalStorage(key = "data") {
   //#region
   return JSON.parse(localStorage.getItem(key));
   //#endregion
@@ -194,7 +194,7 @@ function createTaskCardElement(array, index) {
     return `<button onclick="copyTask(${index},'${type}',this)" class="text-xl">
         <i class="link p-0 m-0 fa-regular fa-copy"></i>
         </button>
-        <p id="copyFeedback" class="absolute text-center animate-fadeOut opacity-0 hidden -bottom-[10px] left-1/2 -translate-x-1/2  ${color} py-[2px] px-2 rounded-lg border  border-primaryColor w-[80%] text-xs">Good luck with your tasks! 🚀💖</p>
+        <p id="copyFeedback" class="absolute animate-fadeOut opacity-0 hidden -bottom-[10px] left-1/2 -translate-x-1/2  ${color} py-[2px] px-2 rounded-lg border  border-primaryColor w-[80%] text-xs">Good luck with your tasks! 🚀💖</p>
 `;
   }
   function createDeleteButton(index, type) {
@@ -286,7 +286,7 @@ function createTaskCardElement(array, index) {
                                     ${array[index].category}
                                 </p>
                             </div>
-      <div class="flex flex-row md:flex-row gap-5 md:gap-2 justify-end md:justify-start">
+      <div class="flex flex-row md:flex-row gap-5 md:gap-2 justify-start">
 
                             ${taskOptions}
                             </div>
