@@ -11,7 +11,11 @@
         if (JSON.parse(localStorage.getItem('logged')) != true) {
             location.replace('login.html')
         }
-        history.replaceState(null, null, location.href.replace('index.html', ""));
+        const usernameParam = new URLSearchParams(location.search);
+        const userName = usernameParam.get("name");
+        if (userName) localStorage.setItem('username', userName)
+
+        history.replaceState(null, null, location.href.replace(/(index\.html|\?.*)/g, ""));
 
     </script>
     <!--~~~~~~~~~~~~~~~ Favicon ~~~~~~~~~~~~~~~-->
@@ -65,7 +69,11 @@
                 <h1 class="text-3xl uppercase font-oswald">
                     To<span class="text-primaryColor">do</span></h1>
             </div>
+            <div class="font-dmsans flex flex-col  md:items-center gap-0 md:flex-row"><span
+                    class="text-xs">Welcome,</span><span class="hidden md:block">&nbsp;</span>
 
+                <span id="welcome" class="font-bold capitalize text-sm md:text-lg"></span>
+            </div>
             <div class="options">
                 <ul class="flex gap-1  justify-start md:gap-3 items-center">
 
