@@ -5,7 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up | MrAli</title>
-
+    <script>
+        if (JSON.parse(localStorage.getItem('logged')) == true) {
+            location.replace('/')
+        }
+        history.replaceState(null, null, location.href.replace('signup.html', ''))
+    </script>
     <!--~~~~~~~~~~~~~~~ Favicon ~~~~~~~~~~~~~~~-->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <!--~~~~~~~~~~~~~~~ Font Awesome ~~~~~~~~~~~~~~~-->
