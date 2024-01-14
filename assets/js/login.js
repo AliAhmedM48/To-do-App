@@ -37,17 +37,25 @@ function signIn() {
     password: passwordInput.value,
   };
 
-  for (let index = 0; index < usersArr.length; index++) {
-    if (
-      user.email.toLowerCase() === usersArr[index].email.toLowerCase() &&
-      user.password === usersArr[index].password
-    ) {
-      console.log("done");
-      saveLogged();
-      resetForm();
-      location.href = "index.html";
-      return;
+  if (checkNewEmail()) {
+    loginFeebback.classList.remove("hidden");
+    loginFeebback.innerHTML = `This email address is not
+                            registered <a href="signup.html" class="text-[#fcabe1] sm:text-blue-200 font-semibold">Sign up.</a>`;
+  } else {
+    for (let index = 0; index < usersArr.length; index++) {
+      if (
+        user.email.toLowerCase() === usersArr[index].email.toLowerCase() &&
+        user.password === usersArr[index].password
+      ) {
+        console.log("done");
+        saveLogged();
+        resetForm();
+        location.href = "index.html";
+        return;
+      }
     }
+    loginFeebback.classList.remove("hidden");
+    loginFeebback.innerHTML = `Invalid password.`;
   }
   //#endregion
 }
@@ -98,7 +106,6 @@ function checkNewEmail() {
     if (
       emailInput.value.toLowerCase() === usersArr[index].email.toLowerCase()
     ) {
-      console.log(usersArr[index].email);
       return false;
     }
   }
@@ -130,6 +137,7 @@ function resetForm() {
   emailInput.value = "";
   passwordInput.value = "";
   emailIsNotUsed();
+
   //#endregion
 }
 
@@ -137,12 +145,14 @@ passwordInput.addEventListener("input", function () {
   validateInput(passwordInput, regex.password)
     ? isValide(passwordInput)
     : isNotValide(passwordInput);
+  loginFeebback.classList.add("hidden");
 });
 
 emailInput.addEventListener("input", function () {
   validateInput(emailInput, regex.email)
     ? isValide(emailInput)
     : isNotValide(emailInput);
+  loginFeebback.classList.add("hidden");
 });
 
 submitBtn.addEventListener("click", signIn);
