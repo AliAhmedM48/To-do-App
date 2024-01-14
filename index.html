@@ -11,6 +11,8 @@
         if (JSON.parse(localStorage.getItem('logged')) != true) {
             location.replace('login.html')
         }
+        history.replaceState(null, null, location.href.replace('index.html', ""));
+
     </script>
     <!--~~~~~~~~~~~~~~~ Favicon ~~~~~~~~~~~~~~~-->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
@@ -240,7 +242,7 @@
 
     <!-- <script src="assets/js/filterizr.min.js"></script> -->
     <!--~~~~~~~~~~~~~~~ Main.js ~~~~~~~~~~~~~~~-->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>
