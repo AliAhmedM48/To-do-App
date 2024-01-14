@@ -7,7 +7,7 @@
     <title>Sign up | MrAli</title>
     <script>
         if (JSON.parse(localStorage.getItem('logged')) == true) {
-            location.replace('/')
+            location.replace('index.html')
         }
         history.replaceState(null, null, location.href.replace('signup.html', ''))
     </script>
