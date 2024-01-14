@@ -41,7 +41,7 @@ function signUp() {
 
   saveData(user);
   resetForm();
-  location.href = "../../login.html";
+  location.href = "login.html";
   //#endregion
 }
 
