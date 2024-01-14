@@ -44,6 +44,7 @@ const counters = {
 };
 
 const updateApp = () => {
+  welcome.innerHTML = localStorage.getItem("username").split(" ")[0];
   setToLocalStorage();
   displayNextUpTasks();
   displayInProgressTasks();
@@ -529,5 +530,7 @@ settingButton.addEventListener("click", function () {
 searchInput.addEventListener("input", searchFunction);
 logoutButton.addEventListener("click", function () {
   localStorage.setItem("logged", false);
+  localStorage.setItem("username", null);
+
   window.location.reload();
 });

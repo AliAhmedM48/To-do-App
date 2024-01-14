@@ -50,7 +50,8 @@ function signIn() {
         console.log("done");
         saveLogged();
         resetForm();
-        location.href = "index.html";
+
+        location.href = "index.html?name=" + usersArr[index].username;
         return;
       }
     }
