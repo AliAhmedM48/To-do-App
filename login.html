@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | MrAli</title>
 
+    <script>
+        if (JSON.parse(localStorage.getItem('logged')) == true) {
+            location.replace('/')
+        }
+        history.replaceState(null, null, location.href.replace('login.html', ""))
+    </script>
+
     <!--~~~~~~~~~~~~~~~ Favicon ~~~~~~~~~~~~~~~-->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <!--~~~~~~~~~~~~~~~ Font Awesome ~~~~~~~~~~~~~~~-->
@@ -102,6 +109,9 @@
                                             focus:bg-darkColor focus:outline-0 focus:ring-1 focus:ring-neonBlueColor
                                                 focus:drop-shadow-lg">Sign
                         in</button>
+                    <div id="loginFeebback" class="hidden text-center mt-2 text-xs text-red-300">Please enter a valid
+                        email address.
+                    </div>
                 </form>
                 <div class="text-dullWhiteColor text-xs border-t border-whiteLightColor pt-4 space-y-2">
                     <p class="">Don't have an account? <a href="signup.html"
