@@ -8,7 +8,7 @@
 
     <script>
         if (JSON.parse(localStorage.getItem('logged')) == true) {
-            location.replace('/')
+            location.replace('index.html')
         }
         history.replaceState(null, null, location.href.replace('login.html', ""))
     </script>
