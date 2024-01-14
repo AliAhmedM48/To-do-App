@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | MrAli</title>
+
+    <!--~~~~~~~~~~~~~~~ Favicon ~~~~~~~~~~~~~~~-->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!--~~~~~~~~~~~~~~~ Font Awesome ~~~~~~~~~~~~~~~-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--~~~~~~~~~~~~~~~ Remix Icon ~~~~~~~~~~~~~~~-->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" /> -->
+    <!--~~~~~~~~~~~~~~~ Swiper's CSS ~~~~~~~~~~~~~~~-->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
+    <!--~~~~~~~~~~~~~~~ CSS ~~~~~~~~~~~~~~~-->
+    <link href="assets/css/style.css" rel="stylesheet" />
+
+
+
+    <!-- * meta tag | open graph -->
+    <!-- #region Open Graph Tag -->
+    <!-- ! Facebook will use open graph to display information if your content is shared. -->
+    <!-- ! Whatsapp doesn't support picture with a size greater than 300KB. -->
+
+    <meta property="og:url" content="www.MrAli.com" />
+    <!-- <meta property="og:type" content="Personal Portfolio Website" /> -->
+
+    <meta property="og:title" content="MrAli | Energized by engineering, passionate about web development." />
+    <meta property="og:site_name" content="MrAli" />
+
+    <meta property="og:description"
+        content="Fullstack Developer - Building websites from scratch using popular tools and languages." />
+    <meta property="og:image" content="https://i.ibb.co/JpdGyqt/poster.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Never Give Up!" />
+
+    <!-- <meta property="og:video"
+                content="https://aliahmedm48.github.io/html-task1/videos/fun.mp4?namePrefix=&fname=&lname=&email=&password=&birthday=&birthcountry=%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9&phone=&linkedinURL=&from=07%3A00%3A00&to=15%3A00%3A00&from=07%3A00%3A00&to=15%3A00%3A00&TimeManagement=70&Communication=50&Problem-solving=70&color=%23000000&SharingInfo=&submit=Submit+without+HTML+validation" />
+            <meta property="og:video:type" content="video/mp4" />
+        
+            <meta property="og:video:width" content="640" />
+            <meta property="og:video:height" content="360" /> -->
+    <!-- #endregion -->
+
+</head>
+
+<body class="w-full">
+
+
+    <main class="bg-gradient-to-r from-[#d1a7c3] from-10% via-[#E0AED0]  sm:via-[#9D6CD2] via-35%  to-[#c980b2] to-90%
+  flex flex-row justify-center items-center h-screen w-full">
+        <!-- #region -->
+        <div class="w-fit bg-darkColor gap-5 md:gap-20 p-4 grid  grid-cols-1 sm:grid-cols-2 items-center rounded-2xl
+        ">
+            <div class="relative hidden sm:block">
+                <img src="assets/images/signup-background.svg" alt="">
+                <img src="assets/images/teamwork.svg" alt="" class="absolute left-0 top-[9rem]">
+            </div>
+            <div class="w-full sm:max-w-80 space-y-5 py-7 px-4 sm:p-0">
+                <h1 class="font-bold text-5xl mb-10 text-whiteColor font-oswald text-center  sm:text-start">Login
+                </h1>
+                <form id="form" action="" method="post" class="space-y-6 text-whiteColor ">
+                    <div class="relative">
+                        <div
+                            class="absolute left-1 top-1 bg-whiteMediumColor rounded-full p-2 flex justify-center items-center text-dullWhiteColor">
+                            <i class=" fa-solid fa-envelope-open"></i>
+                        </div>
+                        <input id="email" class="w-full bg-whiteLightColor py-2 px-5 ps-12 rounded-full placeholder:text-whiteMediumColor
+                            focus:bg-darkColor focus:outline-0 focus:ring-1 focus:ring-neonBlueColor
+                            focus:drop-shadow-lg" type="email" name="email" placeholder="Email Address"
+                            autocomplete="off">
+                        <div
+                            class="hidden absolute right-1 top-1 rounded-full p-2 flex justify-center items-center text-dullWhiteColor">
+                            <i class=" fa-solid fa-x text-red-300 animate-bounce"></i>
+                        </div>
+                        <div class="hidden text-center mt-2 text-xs text-red-300">Please enter a valid email address.
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div
+                            class="absolute left-1 top-1 bg-whiteMediumColor rounded-full p-2 flex justify-center items-center text-dullWhiteColor">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <input id="password" class="w-full bg-whiteLightColor py-2 px-5 ps-12 rounded-full placeholder:text-whiteMediumColor
+                            focus:bg-darkColor focus:outline-0 focus:ring-1 focus:ring-neonBlueColor
+                            focus:drop-shadow-lg" type="password" name="password" placeholder="Password"
+                            autocomplete="off">
+                        <div
+                            class="hidden absolute right-1 top-1 rounded-full p-2 flex justify-center items-center text-dullWhiteColor">
+                            <i class=" fa-solid fa-x text-red-300 animate-bounce"></i>
+                        </div>
+                        <div class="hidden text-center mt-2 text-xs text-red-300">Password must not be empty and must be
+                            at least 8 characters with at least one digit, one lowercase letter, and one
+                            uppercase letter.
+                        </div>
+                    </div>
+                    <button id="submit" type="button" class="w-full font-semibold  py-2 rounded-full text-xl bg-[#d1a7c3] sm:bg-gradient-to-r from-blue-400 to-[#ecbfde]
+                                            focus:bg-darkColor focus:outline-0 focus:ring-1 focus:ring-neonBlueColor
+                                                focus:drop-shadow-lg">Sign
+                        in</button>
+                </form>
+                <div class="text-dullWhiteColor text-xs border-t border-whiteLightColor pt-4 space-y-2">
+                    <p class="">Don't have an account? <a href="signup.html"
+                            class="text-[#fcabe1] sm:text-blue-200 font-semibold">Sign up</a>
+                    </p>
+                    <p>Forgot password? <a href="#" class="text-[#fcabe1] sm:text-blue-200 font-semibold">Reset
+                            password</a></p>
+                    <p>Don't have a password yet? <a href="#" class="text-[#fcabe1] sm:text-blue-200 font-semibold">Set
+                            password</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- #endregion -->
+    </main>
+
+    <script src="assets/js/login.js"></script>
+</body>
+
+</html>

@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do App | MrAli</title>
 
+    <script>
+        if (JSON.parse(localStorage.getItem('logged')) != true) {
+            location.replace('login.html')
+        }
+    </script>
     <!--~~~~~~~~~~~~~~~ Favicon ~~~~~~~~~~~~~~~-->
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <!--~~~~~~~~~~~~~~~ Font Awesome ~~~~~~~~~~~~~~~-->
@@ -19,7 +24,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!--~~~~~~~~~~~~~~~ CSS ~~~~~~~~~~~~~~~-->
     <link href="assets/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="tail.css">
 
 
 
@@ -47,6 +51,7 @@
         <meta property="og:video:width" content="640" />
         <meta property="og:video:height" content="360" /> -->
     <!-- #endregion -->
+
 </head>
 
 <body class="headline">
@@ -64,11 +69,17 @@
 
                     <li class="hidden md:block">
                         <button>
-                            <input id="search" placeholder="Search by title..."
+                            <input list="categories" autocomplete="off" id="search" placeholder="Search by title..."
                                 class="rounded-lg  border-primaryColor border-[1px] w-2/3 md:w-full px-4 py-1"
                                 type="search">
                             <!-- <i class="link fa-solid fa-magnifying-glass"></i> -->
                         </button>
+                        <datalist id="categories">
+                            <option value="Education"></option>
+                            <option value="Health"></option>
+                            <option value="Finance"></option>
+                            <option value="Productivity"></option>
+                        </datalist>
                     </li>
                     <li>
                         <button id="showTaskForm">
@@ -84,6 +95,11 @@
                     <li>
                         <button id="setting">
                             <i class="link fa-solid fa-sliders"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button id="logout">
+                            <i class="link fa-solid fa-arrow-right-from-bracket"></i>
                         </button>
                     </li>
                 </ul>
@@ -176,7 +192,6 @@
                     <label class="form__label" for="categoryInput">Task Category</label>
 
                 </div>
-
                 <div class="form__floating">
                     <input placeholder="" class="form__control" id="titleInput" type="text">
                     <label class="form__label" for="titleInput">Task Title</label>
@@ -212,18 +227,18 @@
         </div>
     </div>
     <!--~~~~~~~~~~~~~~~ Swiper JS ~~~~~~~~~~~~~~~-->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
     <!--~~~~~~~~~~~~~~~ Scroll Reveal ~~~~~~~~~~~~~~~-->
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
     <!--~~~~~~~~~~~~~~~ jquery js ~~~~~~~~~~~~~~~-->
-    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- <script src="assets/js/jquery-3.7.1.min.js"></script> -->
     <!--~~~~~~~~~~~~~~~ Isotope js Filter & sort magical layouts ~~~~~~~~~~~~~~~-->
     <!-- <script src="assets/js/isotope.pkgd.min.js"></script> -->
     <!-- <script src="assets/js/isotope.pkgd.js"></script> -->
 
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script> -->
 
-    <script src="assets/js/filterizr.min.js"></script>
+    <!-- <script src="assets/js/filterizr.min.js"></script> -->
     <!--~~~~~~~~~~~~~~~ Main.js ~~~~~~~~~~~~~~~-->
     <script src="assets/js/main.js"></script>
 </body>
